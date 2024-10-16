@@ -1,8 +1,15 @@
 import React from 'react'
+import MainHero from '../components/MainHero'
+import BrowseTheRange from '../components/BrowseTheRange'
+import OurProducts from '../components/OurProducts'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+        <MainHero/>
+        <BrowseTheRange/>
+        <OurProducts/>
+    </div>
   )
 }
 

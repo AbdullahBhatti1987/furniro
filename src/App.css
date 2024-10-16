@@ -1,42 +1,33 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.mainPic{
+  background-image: url("https://s3-alpha-sig.figma.com/img/98fb/219f/a11f805aade2224f1d6658764a2395df?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nKx2kWpHDrFvf1gIsCdzjlgHdj-enjUkQpXWQfgoaA~GJ~iD8Y54inQzhHyifkFmdaoZGw75zHxw~91Xie6Apukh4VS77KKz3WRHh60L3QF~aCJZqBaQAmNda-FFTCpEywkrpPp3EjsHzWy3CMiNd1LSYAWOfOvgKKeRKn86E-gy0~NBAvd-yZDq5-sAmfX2vyREPJFfNccJ7Nu6vgqX3ncKhA7emQ3248-p3-3k50oWHfpN~JCCSaugLgh32OamcW0dzVAbRE~5yhpbfl9S1vDAToR20PnF~7vHY9yrEzPiTjH3sUTr5MWdAjkkeCWh-3MWwiXdhALbMx3VG7WAAg__");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root{
+  --lightColor : #FFF3E3;
+  --darkColor: #B88E2F;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
-.card {
-  padding: 2em;
+.lightColor{
+  background-color: var(--lightColor);
 }
-
-.read-the-docs {
-  color: #888;
+.darkColor{
+  background-color: var(--darkColor);
+}
+.lightFont{
+  color: var(--lightColor);
+}
+.darkFont{
+  color: var(--darkColor);
 }
