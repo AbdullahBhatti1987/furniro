@@ -5,15 +5,15 @@ import StaticCard from "./StaticCard";
 
 function BrowseTheRange() {
   return (
-    <div className="w-full py-12">
+    <div className="w-full py-12 bg-white">
       <div className="w-10/12 mx-auto">
-      <div className="min-h-36 flex flex-col justify-evenly">
+      <div className="py-12 flex flex-col justify-evenly gap-6">
         <Heading text={"Browse The Range"} />
         <Paragraph
           text={"Lorem ipsum dolor sit amet, consecteur adipiscing elit."}
         />
       </div>
-      <div className="flex flex-row justify-between items-center">
+      <div className="flex flex-col lg:flex-row md:flex-row gap-4 justify-between items-center">
         <StaticCard
           src={
             "https://s3-alpha-sig.figma.com/img/3740/8e44/4bdba3a6bef9d68df2d9a06e32e96c61?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ROUXBy1r-Nah0CWZC2ufVJFltz65~sxUTwljJHPyFqpY2oRRu7W0BeOeYwFEVpk35NYYtbGhFIj8ZjZ3yhxhplmkVgF3ohqjaQDF5v-1e6cZOYrOlYuE-lbtTFexU4oI-yoF-bJgn~aNfGmdXv5b8iO1ILt3R8K~TciHhyjC85n2nkbVkX9S~grIGCXIhwprfcN-opwExYxQJlZ2iFsi9NOuFkBVrU7gZC99dnF0H3PBMTo0mZoIanBmBoBdtjrJU0P4rLJP~tErXFiPMtMUeMqfindXmwCtaN9GdnZpzT7Xyt767TXYYIaMvCwQuiv1iO88CzwMXm4yvJAZbQl7zg__"

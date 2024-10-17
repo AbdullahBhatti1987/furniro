@@ -1,7 +1,6 @@
 #root {
   margin: 0 auto;
   padding: 0px;
-  text-align: center;
 }
 
 
@@ -9,19 +8,26 @@
   background-image: url("https://s3-alpha-sig.figma.com/img/98fb/219f/a11f805aade2224f1d6658764a2395df?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=nKx2kWpHDrFvf1gIsCdzjlgHdj-enjUkQpXWQfgoaA~GJ~iD8Y54inQzhHyifkFmdaoZGw75zHxw~91Xie6Apukh4VS77KKz3WRHh60L3QF~aCJZqBaQAmNda-FFTCpEywkrpPp3EjsHzWy3CMiNd1LSYAWOfOvgKKeRKn86E-gy0~NBAvd-yZDq5-sAmfX2vyREPJFfNccJ7Nu6vgqX3ncKhA7emQ3248-p3-3k50oWHfpN~JCCSaugLgh32OamcW0dzVAbRE~5yhpbfl9S1vDAToR20PnF~7vHY9yrEzPiTjH3sUTr5MWdAjkkeCWh-3MWwiXdhALbMx3VG7WAAg__");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: calc(100%) 70%;
+  background-attachment: fixed;
+
 }
 
 :root{
   --lightColor : #FFF3E3;
   --darkColor: #B88E2F;
   --hoverColor: #3A3A3A;
+  --lightbg: #FCF8F3;
+
 
 }
 
 
 .lightColor{
   background-color: var(--lightColor);
+}
+.lightbg{
+  background-color: var(--lightbg);
 }
 .hoverColor{
   background-color: var(--hoverColor);
@@ -34,4 +40,7 @@
 }
 .darkFont{
   color: var(--darkColor);
+}
+.darkBorder{
+  border-color: var(--darkColor);
 }

@@ -2,9 +2,9 @@ import React from 'react'
 
 function MainHero() {
   return (
-    <div className="mainPic w-full relative flex items-center">
+    <div className="w-full relative flex flex-col lg:flex-row md:flex-row items-center ">
     <div className='blank w-[50%] h-full'></div>
-    <div className='message w-[50%] my-24 p-8 gap-4 mx-12 lightColor h-full flex flex-col justify-evenly'>
+    <div className='message lg:w-[50%] md:w-[50%] w-[100%] my-24 p-12 gap-4 mx-12 lightColor h-full flex flex-col justify-evenly rounded-2xl'>
         <p className='text-start font-bold'>New Arrival</p>
         <h1 className='text-6xl darkFont font-bold text-start'>Discover Our New Collection</h1>
         <p className='text-start'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure magni est ab maiores iste dolorum suscipit !</p>

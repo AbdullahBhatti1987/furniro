@@ -8,7 +8,7 @@ function Card({ src, alt, title, category, newPrice, oldPrice, discount }) {
 
   return (
     <div
-      className="w-[48%] md:w-[30%] lg:w-[23%] relative overflow-hidden group"
+      className="w-[47%] md:w-[30%] lg:w-[23%] relative overflow-hidden group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -43,7 +43,7 @@ function Card({ src, alt, title, category, newPrice, oldPrice, discount }) {
         <button className="darkFont bg-white px-2 md:px-4 py-1 md:py-2 w-[60%] md:w-[50%] font-bold text-sm md:text-base">
           Add to cart
         </button>
-        <div className="flex justify-between gap-2 md:gap-4 text-sm md:text-lg">
+        <div className="flex flex-col lg:flex-row md:flex-row justify-between gap-2 md:gap-4 text-sm md:text-lg">
           <div className="flex justify-center items-center gap-1">
             <IoShareSocialSharp />
             <span className="cursor-pointer">Share</span>
