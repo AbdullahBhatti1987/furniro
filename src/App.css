@@ -15,12 +15,16 @@
 :root{
   --lightColor : #FFF3E3;
   --darkColor: #B88E2F;
+  --hoverColor: #3A3A3A;
 
 }
 
 
 .lightColor{
   background-color: var(--lightColor);
+}
+.hoverColor{
+  background-color: var(--hoverColor);
 }
 .darkColor{
   background-color: var(--darkColor);
