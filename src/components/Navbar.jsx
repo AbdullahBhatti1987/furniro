@@ -49,6 +49,13 @@ export function Component() {
         </Navbar.Link>
         <Navbar.Link>
           <Link
+            to="/blog"
+            className="lg:text-xl md:text-lg text-base font-semibold dark:text-white hover:text-gray-500"         >
+            Blog
+          </Link>
+        </Navbar.Link>
+        <Navbar.Link>
+          <Link
             to="/about"
             className="lg:text-xl md:text-lg text-base font-semibold dark:text-white hover:text-gray-500"          >
             About

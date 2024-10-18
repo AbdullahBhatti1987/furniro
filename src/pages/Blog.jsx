@@ -2,12 +2,12 @@ import React from 'react'
 import PageTop from "../components/PageTop";
 
 
-function About() {
+function Blog() {
   return (
      <div>
-      <PageTop heading={"About"} routeLink={"about"}/>
+      <PageTop heading={"Blog"} routeLink={"blog"}/>
      </div>
   )
 }
 
-export default About
+export default Blog

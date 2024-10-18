@@ -31,6 +31,11 @@ function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to={"/blog"} className="font-bold">
+                  Blog
+                </Link>
+              </li>
+              <li>
                 <Link to={"/about"} className="font-bold">
                   About
                 </Link>
