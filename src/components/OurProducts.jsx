@@ -1,16 +1,19 @@
 import Card from "./Card";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
 
-function OurProducts() {
+function OurProducts({apiProducts}) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const {id}= useParams();
 
   useEffect(() => {
     setIsLoading(true); 
     axios
-      .get("https://dummyjson.com/products")
+      .get(apiProducts)
       .then((response) => {
         setProducts(response.data.products); 
         setIsLoading(false);
@@ -23,20 +26,20 @@ function OurProducts() {
 
 
   return (
-    <div className="bg-white pt-12">
+    <div className="bg-white py-12">
       <div className="w-10/12 mx-auto ">
         <div className="flex mx-auto gap-5 flex-wrap">
           {isLoading == false ? (
             products.map((data) => (
-              <Card
-                title={data.title}
-                newPrice={data.price}
-                oldPrice={(data.price * 1.25).toFixed(2)}
-                category={data.category}
-                src={data.thumbnail}
-                discountPercentage={"15%"}
-                newArrival={"New"}
-              />
+              <Card 
+              onClick={() => console.log("Add Product:", data.id)}  
+              key={data.id}  
+              title={data.title}
+              newPrice={data.price}
+              oldPrice={(data.price * 1.25).toFixed(2)}  
+              category={data.category}
+              src={data.thumbnail}
+            />
             ))
           ) : (
             <div className="w-[100%] h-[100%] flex flex-col justify-center items-center">

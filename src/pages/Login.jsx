@@ -7,7 +7,7 @@ import { HiMail } from "react-icons/hi";
 
 function Login() {
   return (
-     <div className='py-6'>
+     <div className=''>
       <PageTop heading={"Login"} routeLink={"login"} to={"/auth/login"}/>
       <div className='lg:w-5/12 md:w-4/6 w-11/12 mx-auto flex flex-col justify-center items-center'>
           <div className='w-full border-b-2'>

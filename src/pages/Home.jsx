@@ -23,7 +23,7 @@ function Home() {
           <Heading text={"Our Products"} />
         </div>
       </div>
-      <OurProducts />
+      <OurProducts apiProducts={"https://dummyjson.com/products"}/>
       <Component />
       {/* <FurniroFurniture/> */}
     </div>

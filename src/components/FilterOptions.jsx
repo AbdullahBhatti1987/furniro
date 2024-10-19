@@ -82,7 +82,7 @@ function FilterOptions() {
         <div className="left lg:w-1/2 md:w-1/2 w-2/2">
           <select name="category" id="category1" className="w-full rounded-xl">
            {categories.map((data)=>(
-             <option value={data.name}>{data.slug}</option>
+             <option key={data.name} value={data.name}>{data.slug}</option>
            ))}
            
           </select>

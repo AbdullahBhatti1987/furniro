@@ -20,7 +20,7 @@ function Shop() {
     <div>
       <PageTop heading={"Shop"} linkName={"Shop"} to={"/shop"}/>
       <FilterOptions />
-      <OurProducts/>
+      <OurProducts apiProducts={"https://dummyjson.com/products"}/>
       <Component />
         <Banner />
     </div>
