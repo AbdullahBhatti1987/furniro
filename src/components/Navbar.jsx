@@ -24,7 +24,9 @@ export function Component() {
       </Navbar.Brand>
       <div className="flex md:order-2">
         <div className="flex lg:gap-8 gap-4 justify-evenly items-center min-w-[25%] me-4">
+          <Link to={"/auth/login"}>
           <TbUserExclamation className="text-xl lg:text-3xl font-bold" />
+          </Link>
           <IoIosSearch className="text-xl lg:text-3xl font-bold" />
           <FaRegHeart className="text-xl lg:text-2xl font-bold" />
           <BsCart className="text-xl lg:text-3xl font-bold" />

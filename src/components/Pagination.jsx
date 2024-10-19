@@ -10,7 +10,7 @@ export function Component({}) {
   const onPageChange = (page) => setCurrentPage(page);
 
   return (
-    <div className="w-fit mx-auto darkBorder darkFont flex overflow-x-auto sm:justify-center shadow-lg">
+    <div className="w-fit mx-auto darkBorder darkFont flex overflow-x-auto sm:justify-center shadow-lg py-12">
       <Pagination currentPage={currentPage} totalPages={100} onPageChange={onPageChange} showIcons  />
     </div>
   );

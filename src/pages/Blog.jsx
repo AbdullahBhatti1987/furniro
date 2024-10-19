@@ -5,7 +5,7 @@ import PageTop from "../components/PageTop";
 function Blog() {
   return (
      <div>
-      <PageTop heading={"Blog"} routeLink={"blog"}/>
+      <PageTop title={"Blog"} heading={"Blog"} linkName={"Blog"} to={"/blog"}/>
      </div>
   )
 }

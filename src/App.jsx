@@ -6,6 +6,10 @@ import Shop from './pages/Shop'
 import Blog from './pages/Blog'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import Auth from './pages/Auth'
+import SingleProduct from './pages/SingleProduct'
 
 function App() {
 
@@ -13,16 +17,17 @@ function App() {
   return (
    <BrowserRouter>
     <Routes>
-      {/* <Route path=''>
-        <Route path='' />
-        <Route path='' />
-      </Route> */}
+      <Route path='/auth' element={<Auth/>}>
+        <Route path={'login'} element={<Login/>}/>
+        <Route path={'signup'} element={<Signup/>}/>
+      </Route>
       <Route element={<Dashboard />} >
-        <Route path='/' element={<Home/>} />
-        <Route path='/shop' element={<Shop/>} />
-        <Route path='/blog' element={<Blog/>} />
-        <Route path='/about' element={<About/>} />
-        <Route path='/contact' element={<Contact/>} />
+        <Route path={'/'} element={<Home/>} />
+        <Route path={'/shop'} element={<Shop/>} />
+        <Route path={'shop/id'} element={<SingleProduct/>} />
+        <Route path={'/blog'} element={<Blog/>} />
+        <Route path={'/about'} element={<About/>} />
+        <Route path={'/contact'} element={<Contact/>} />
         <Route/>
       </Route>
     </Routes>

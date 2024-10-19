@@ -5,7 +5,7 @@ import PageTop from "../components/PageTop";
 function Contact() {
   return (
      <div>
-      <PageTop heading={"Contact"} routeLink={"contact"}/>
+      <PageTop heading={"Contact"} linkName={"Contact"} to={"/contact"}/>
      </div>
   )
 }

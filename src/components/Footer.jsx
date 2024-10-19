@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className="w-full flex flex-col bg-white relative bottom-0 ">
-      <div className="w-10/12 mx-auto py-12 flex lg:flex-row flex-wrap justify-between items-start gap-6">
+      <div className="w-10/12 mx-auto py-12 flex lg:flex-row flex-wrap justify-between items-start gap-6 border-t-2">
         <div className="flex flex-col lg:w-[30%] w-[45%] ">
         
             <span className=" whitespace-nowrap text-2xl lg:text-3xl font-bold dark:text-white h-16">
@@ -75,7 +75,7 @@ function Footer() {
                 type="email"
                 name="email"
                 id="subscribeEmail"
-                className="pl-0 pr-8 lg:mr-4 border-b-2 border-gray-600 border-0"
+                className="pl-0 pr-8 lg:mr-4 border-b-2 border-gray-600 border-0 hover:cursor-pointer"
                 placeholder="Enter Your Email Address"
               />
               <button className="border-b-2 border-gray-600 text-start py-2 hover:shadow-md">

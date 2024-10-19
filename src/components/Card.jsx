@@ -3,9 +3,10 @@ import { IoShareSocialSharp } from "react-icons/io5";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa6";
 
-function Card({ src, alt, title, category, newPrice, oldPrice, discount }) {
+function Card({ src, alt, title, category, newPrice, oldPrice, discountPercentage}) {
   const [isHovered, setIsHovered] = useState(false);
-
+  const [discount, setDiscount] = useState(false);
+  // const [newArrival, setNewArrival] = useState(false);
 
   return (
     <div
@@ -29,11 +30,17 @@ function Card({ src, alt, title, category, newPrice, oldPrice, discount }) {
       </div>
 
       {/* Discount Badge */}
-      {discount && (
-        <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs md:text-sm">
-          {discount}
+      {!discount && (
+        <div className="absolute top-2 left-2 min-w-12 min-h-12 flex justify-center items-center bg-red-500 text-white px-2 py-1 rounded-full text-xs md:text-sm">
+          {discountPercentage}
         </div>
       )}
+        {/* NewArrival Badge */}
+        {/* {!newArrival && (
+        <div className="absolute top-2 right-2 min-w-12 min-h-12 flex justify-center items-center bg-green-400 text-white px-2 py-1 rounded-full text-xs md:text-sm">
+          {newArrival}
+        </div>
+      )} */}
 
      
 <div

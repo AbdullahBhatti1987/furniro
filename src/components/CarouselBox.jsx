@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from 'react-router-dom';
 import { Slider } from '../components/Carousel'
 
 export function Component() {
@@ -13,7 +14,7 @@ export function Component() {
           Our designer already made a lot of beautiful prototipe of rooms that
           inspire you
         </p>
-        <button className="py-3 px-6 darkColor text-white">Explore More</button>
+        <Link to={"/shop"}><button className="py-3 px-6 darkColor text-white">Explore More</button></Link>
       </div>
 
       <div className="lg:w-[30%] md:w-[45%] w-[100%] flex flex-col items-start justify-around gap-6">

@@ -18,7 +18,7 @@ function Shop() {
 
   return (
     <div>
-      <PageTop heading={"Shop"} routeLink={"shop"}/>
+      <PageTop heading={"Shop"} linkName={"Shop"} to={"/shop"}/>
       <FilterOptions />
       <OurProducts/>
       <Component />

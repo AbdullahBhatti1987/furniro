@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { GiSettingsKnobs } from "react-icons/gi";
 import { TbGridDots } from "react-icons/tb";
 import { BsViewList } from "react-icons/bs";
 
 function FilterOptions() {
     const [isVisible, setIsVisible] = useState(false);
+    const [categories, setCategories] = useState([]);
+ 
+ useEffect(() => {
+    axios
+      .get('https://dummyjson.com/products/categories')
+      .then((response) => {
+        setCategories(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+      });
+  }, []); 
+
 
     const HandleFilter = () => {        
         setIsVisible(prev => !prev);
@@ -67,21 +81,17 @@ function FilterOptions() {
       >
         <div className="left lg:w-1/2 md:w-1/2 w-2/2">
           <select name="category" id="category1" className="w-full rounded-xl">
-            <option value="">Laptop</option>
-            <option value="">PC</option>
-            <option value="">Keyboard</option>
-            <option value="">Mouse</option>
-            <option value="">Table</option>
+           {categories.map((data)=>(
+             <option value={data.name}>{data.slug}</option>
+           ))}
+           
           </select>
         </div>
         <div className="right lg:w-1/2 md:w-1/2 w-2/2">
-          <select name="category" id="category2" className="w-full rounded-xl">
-            <option value="">Laptop</option>
-            <option value="">PC</option>
-            <option value="">Keyboard</option>
-            <option value="">Mouse</option>
-            <option value="">Table</option>
-          </select>
+          <div className="w-full flex gap-4">
+          <input type="search" name="search" placeholder="Search product by name" className="w-3/4 rounded-xl"/>
+          <button className="darkColor text-white font-bold rounded-lg w-1/4">Search</button>
+          </div>
         </div>
       </div>
     </div>

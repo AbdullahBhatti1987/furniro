@@ -5,26 +5,25 @@ import React, { useEffect, useState } from "react";
 
 function OurProducts() {
   const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true); // Set loading to true every time the fetch starts
+    setIsLoading(true); 
     axios
       .get("https://dummyjson.com/products")
       .then((response) => {
-        setProducts(response.data.products); // Set the fetched products
-        setIsLoading(false); // Set loading to false once data is fetched
+        setProducts(response.data.products); 
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching products:", error);
-        setIsLoading(false); // Ensure loading is set to false in case of an error as well
+        setIsLoading(false); 
       });
   }, []); 
 
 
   return (
-    <div className="bg-white py-12">
+    <div className="bg-white pt-12">
       <div className="w-10/12 mx-auto ">
         <div className="flex mx-auto gap-5 flex-wrap">
           {isLoading == false ? (
@@ -35,6 +34,8 @@ function OurProducts() {
                 oldPrice={(data.price * 1.25).toFixed(2)}
                 category={data.category}
                 src={data.thumbnail}
+                discountPercentage={"15%"}
+                newArrival={"New"}
               />
             ))
           ) : (
@@ -54,7 +55,7 @@ function OurProducts() {
           )}
         </div>
       </div>
-      <div className="w-full mx-auto flex justify-center items-center py-12">
+      <div className="w-full mx-auto flex justify-center items-center">
         {/* <button className='py-3 px-24 border-2 darkBorder darkFont font-semibold shadow-lg active:shadow-sm'>More</button> */}
         
       </div>
