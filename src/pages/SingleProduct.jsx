@@ -18,10 +18,10 @@ function SingleProduct(params) {
           <Component linkName={"Shop"} to={"/shop"} />
         </div>
       </div>
-        <ProductDetail productTitle={params.id}/>
+        <ProductDetail />
         <Descriptions />
         <Heading text={"Related Products"}/>
-        <OurProducts apiProducts={'https://dummyjson.com/products/category/smartphones'}/>
+        <OurProducts apiProducts={'https://dummyjson.com/products/category/smartphones'} limit={4}/>
     </div>
   );
 }

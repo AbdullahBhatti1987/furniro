@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 
-function OurProducts({apiProducts}) {
+function OurProducts({apiProducts, limit}) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -30,7 +30,7 @@ function OurProducts({apiProducts}) {
       <div className="w-10/12 mx-auto ">
         <div className="flex mx-auto gap-5 flex-wrap">
           {isLoading == false ? (
-            products.map((data) => (
+            products.map((data) => ( data.id <= limit &&
               <Card 
               onClick={() => console.log("Add Product:", data.id)}  
               key={data.id}  

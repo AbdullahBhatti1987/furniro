@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ProductDetail(productTitle) {
+function ProductDetail() {
   const [count, setCount] = useState(0);
 
   return (
@@ -42,7 +42,7 @@ function ProductDetail(productTitle) {
       <div className="right lg:w-6/12 md:w-6/12 w-full border-b-2 p-6">
         <div className="flex flex-col gap-4">
           <h1 className="lg:text-3xl text-2xl font-bold text-gray-800">
-            {productTitle}
+            Asgaard sofa
           </h1>
           <h3 className="lg:text-2xl text-xl text-gray-400 font-semibold">
             Rs, 250,000.00

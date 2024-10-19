@@ -10,8 +10,8 @@ import { HiMail } from "react-icons/hi";
 function Signup() {
   return (
      <div>
-      <PageTop heading={"Signup"} routeLink={"signup"} to={"/auth/signup"}/>
-      <div className='lg:w-5/12 md:w-4/6 w-11/12 mx-auto flex flex-col justify-center items-center'>
+      <PageTop heading={"Signup"} linkName={"signup"} />
+      <div className='lg:w-5/12 md:w-4/6 w-11/12 mx-auto flex flex-col justify-center items-center py-6'>
           <div className='w-full border-b-2'>
             <h3 className='text-start text-2xl w-fit font-bold py-4 border-b-2 darkBorder min-w-[50%]'>Signup</h3>
           </div>
@@ -22,7 +22,7 @@ function Signup() {
           <Component id={"lastname"} type={"text"} icon={FaRegUser} placeholder={"Last name"}/>
           </div>
           <Component id={"age"} type={"text"} icon={FaRegUser} placeholder={"username"}/>
-          <Component id={"email4"} type={"email"} icon={HiMail} placeholder={"abdullah@gmail.com"}/>
+          <Component id={"emailsignup"} type={"email"} icon={HiMail} placeholder={"abdullah@gmail.com"}/>
             <PassComponent/>
  
              <p className='text-start w-full py-3 text-sm'>if you have an account, please <Link to={"/auth/login"}  className="text-blue-500 font-bold pl-2">Login Here</Link></p>

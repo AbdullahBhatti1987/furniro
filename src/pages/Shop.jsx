@@ -19,8 +19,8 @@ function Shop() {
   return (
     <div>
       <PageTop heading={"Shop"} linkName={"Shop"} to={"/shop"}/>
-      <FilterOptions />
-      <OurProducts apiProducts={"https://dummyjson.com/products"}/>
+      <FilterOptions  />
+      <OurProducts apiProducts={"https://dummyjson.com/products"} limit={100}/>
       <Component />
         <Banner />
     </div>

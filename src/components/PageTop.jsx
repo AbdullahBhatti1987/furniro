@@ -19,7 +19,7 @@ function PageTop({heading, linkName, to}) {
           <h1 className=" text-center lg:text-6xl md:text-4xl text-xl font-semibold mb-4">                       
             {heading}
           </h1>
-          <Component linkName={linkName} to={to}  />
+          <Component linkName={linkName} to={to} />
         </div>
       </div>
   )
