@@ -3,11 +3,14 @@
 import { Navbar } from "flowbite-react";
 import { FaRegHeart } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
-import { BsCart } from "react-icons/bs";
+
 import { TbUserExclamation } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { CartOption } from "./CartOption";
+
 
 export function Component() {
+
   return (
     <div className="w-full">
       <div className="lg:w-10/12 md:w-11/12 w-full mx-auto">
@@ -29,14 +32,10 @@ export function Component() {
               </Link>
               <IoIosSearch className="text-xl lg:text-3xl font-bold" />
               <FaRegHeart className="text-xl lg:text-2xl font-bold" />
-              <button type="button" className="relative">
-                <BsCart className="text-xl lg:text-3xl font-bold"></BsCart>
-                <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white darkColor border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900">
-                  <span>5</span>
-                </div>
-              </button>
+              
+              <CartOption/>
             </div>
-
+           
             <Navbar.Toggle />
           </div>
           <Navbar.Collapse className="transition-all duration-300 ease-in-out ">

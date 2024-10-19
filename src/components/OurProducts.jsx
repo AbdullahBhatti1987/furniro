@@ -28,7 +28,7 @@ function OurProducts({apiProducts, limit}) {
   return (
     <div className="bg-white py-12">
       <div className="w-10/12 mx-auto ">
-        <div className="flex mx-auto gap-5 flex-wrap">
+        <div className="flex mx-auto gap-4 flex-wrap">
           {isLoading == false ? (
             products.map((data) => ( data.id <= limit &&
               <Card 
