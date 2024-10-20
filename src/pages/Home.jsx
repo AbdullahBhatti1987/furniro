@@ -5,14 +5,15 @@ import BrowseTheRange from "../components/BrowseTheRange";
 import OurProducts from "../components/OurProducts";
 import { Component } from "../components/CarouselBox";
 import Heading from "../components/Heading";
+import Gallery from "../components/Gallery";
 // import FurniroFurniture from '../components/FurniroFurniture'
 
 function Home() {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);  
-  }, [location]); 
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <div className="mainPic">
@@ -23,8 +24,10 @@ function Home() {
           <Heading text={"Our Products"} />
         </div>
       </div>
-      <OurProducts apiProducts={"https://dummyjson.com/products"} limit={8}/>
+      <OurProducts apiProducts={"https://dummyjson.com/products"} limit={8} />
       <Component />
+      <Gallery />
+
       {/* <FurniroFurniture/> */}
     </div>
   );

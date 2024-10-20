@@ -1,11 +1,11 @@
-
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Component } from "../components/Breadcrumb";
 import ProductDetail from "../components/ProductDetail";
 import Descriptions from "../components/Descriptions";
 import Heading from "../components/Heading";
 import OurProducts from "../components/OurProducts";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+
 
 
 
@@ -29,7 +29,7 @@ function SingleProduct() {
         <ProductDetail />
         <Descriptions />
         <Heading text={"Related Products"}/>
-        <OurProducts apiProducts={'https://dummyjson.com/products/category/smartphones'} limit={4}/>
+        <OurProducts apiProducts={"https://dummyjson.com/products"} limit={4}/>
     </div>
   );
 }

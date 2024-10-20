@@ -46,11 +46,16 @@ function Card({ src, alt, title, category, newPrice, oldPrice, discountPercentag
 
      
 <div
-  className={`absolute inset-0 hoverColor opacity-80 text-white flex flex-col items-center justify-center gap-4 md:gap-8
+  className={`absolute inset-0 hoverColor opacity-80 text-white flex flex-col items-center justify-center gap-4 md:gap-8 z-10
   transform ${isHovered ? "translate-y-0" : "-translate-y-full"} 
   transition-transform duration-500 ease-out  `}
 >
-  {/* Button without opacity */}
+</div>
+<div
+  className={`absolute inset-0 opacity-100 text-white flex flex-col items-center justify-center lg:gap-6  md:gap-8 z-20
+  transform ${isHovered ? "translate-y-0" : "-translate-y-full"} 
+  transition-transform duration-500 ease-out  `}
+>
   <button onClick={()=>("")} className="addToCartBtn darkFont text-nowrap bg-white opacity-100 min-w-24 lg:min-w-36 py-2 font-bold lg:text-md md:text-sm text-xs">
     Add to cart
   </button>
@@ -74,6 +79,7 @@ function Card({ src, alt, title, category, newPrice, oldPrice, discountPercentag
       <span className="cursor-pointer">Like</span>
     </div>
   </div>
+
  
 </div>
 

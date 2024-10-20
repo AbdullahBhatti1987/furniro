@@ -4,7 +4,7 @@ import { Drawer } from "flowbite-react";
 
 export default function DrawerItem({ title, count, amount, image }) {
   return (
-    <Drawer.Items className={"shadow-md rounded-xl"}>
+    <Drawer.Items className={"shadow-md rounded-xl py-2"}>
       <div className=" flex flex-row justify-between items-center">
         <div className="w-6/6 flex flex-row justify-between items-center border rounded-xl p-1">
           <div className="w-2/6 lightColor rounded-lg">
