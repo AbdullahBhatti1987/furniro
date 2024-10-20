@@ -3,12 +3,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
-
 function OurProducts({apiProducts, limit}) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const {id}= useParams();
+  const {id} = useParams();
 
   useEffect(() => {
     setIsLoading(true); 
@@ -32,13 +31,17 @@ function OurProducts({apiProducts, limit}) {
           {isLoading == false ? (
             products.map((data) => ( data.id <= limit &&
               <Card 
-              onClick={() => console.log("Add Product:", data.id)}  
+             
               key={data.id}  
               title={data.title}
               newPrice={data.price}
               oldPrice={(data.price * 1.25).toFixed(2)}  
               category={data.category}
               src={data.thumbnail}
+              addToCart={()=>{}}
+              buyNow={()=>{console.log("BuyNow this product", data.id)}}
+              toViewProduct={`/shop/${data.id}`}
+    
             />
             ))
           ) : (

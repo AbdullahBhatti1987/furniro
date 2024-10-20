@@ -64,7 +64,7 @@ function FilterOptions() {
             <select
               name="sortby"
               id="sortby"
-              className="rounded-lg text-gray-500"
+              className="rounded-lg text-gray-500"              
             >
               <option value="1">Sort by name A-Z</option>
               <option value="2">Sort by name Z-A</option>
@@ -75,8 +75,8 @@ function FilterOptions() {
         </div>
       </div>
       <div
-        className={`bottom w-10/12 mx-auto flex lg:flex-row md:flex-row flex-col py-4 lg:gap-12 md:gap-6 gap-4 transition-all duration-500 ease-in-out ${
-          isVisible ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        className={`bottom w-10/12 mx-auto flex lg:flex-row md:flex-row flex-col  lg:gap-12 md:gap-6 gap-4 transition-all duration-500 ease-in-out ${
+          isVisible ? "max-h-[500px] opacity-100 pt-4" : "max-h-0 opacity-0"
         } overflow-hidden`}
       >
         <div className="left lg:w-1/2 md:w-1/2 w-2/2">

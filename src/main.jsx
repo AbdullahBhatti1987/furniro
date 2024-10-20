@@ -1,10 +1,19 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import UserContextProvider from "./context/UserContext.jsx";
+// import SearchContextProvider from "./context/SearchContext.jsx";
+import AddtoCartContextProvider from "./context/AddToCart.jsx";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <UserContextProvider>
+      {/* <SearchContextProvider> */}
+        <AddtoCartContextProvider>
+          <App />
+        </AddtoCartContextProvider>
+      {/* </SearchContextProvider> */}
+    </UserContextProvider>
+  </StrictMode>
+);

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-function ProductDetail() {
+function ProductDetail({title,category, newPrice, rating, description, mainImage, thumbnail1,thumbnail2, thumbnail3, thumbnail4 }) {
   const [count, setCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className="lg:w-10/12 w-11/12 mx-auto py-12 flex lg:flex-row md:flex-row flex-col justify-stretch items-start gap-8">
@@ -10,29 +11,29 @@ function ProductDetail() {
         <div className="left lg:w-2/12 w-3/12 flex flex-col justify-start items-center gap-4">
           <img
             className="rounded-2xl hover:shadow-lg transition-shadow duration-300"
-            src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
+            src={thumbnail1}
             alt="..."
           />
           <img
             className="rounded-2xl hover:shadow-lg transition-shadow duration-300"
-            src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
+            src={thumbnail2}
             alt="..."
           />
           <img
             className="rounded-2xl hover:shadow-lg transition-shadow duration-300"
-            src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+            src={thumbnail3}
             alt="..."
           />
           <img
             className="rounded-2xl hover:shadow-lg transition-shadow duration-300"
-            src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
+            src={thumbnail4}
             alt="..."
           />
         </div>
         <div className="right lg:w-10/12 w-full">
           <img
             className="rounded-2xl hover:shadow-lg transition-shadow duration-300"
-            src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
+            src={mainImage}
             alt="..."
           />
         </div>
@@ -40,25 +41,26 @@ function ProductDetail() {
 
       {/* Right Div */}
       <div className="right lg:w-6/12 md:w-6/12 w-full border-b-2 p-6">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3">
           <h1 className="lg:text-3xl text-2xl font-bold text-gray-800">
-            Asgaard sofa
+           {title}
           </h1>
           <h3 className="lg:text-2xl text-xl text-gray-400 font-semibold">
-            Rs, 250,000.00
+            {category}
+          </h3>
+          <h3 className="lg:text-2xl text-xl text-gray-600 font-semibold">
+            $ {newPrice}
           </h3>
           <div className="flex flex-row items-center">
             <h3 className="lg:text-lg text-md text-gray-600 font-medium">
               Rating:
             </h3>
-            <span className="ml-2 text-yellow-500 text-lg font-bold">4.7</span>
+            <span className="ml-2 text-yellow-500 text-lg font-bold">{rating}</span>
           </div>
           <p className="text-sm lg:text-base leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            eveniet, quo, dolorum veritatis unde aliquam placeat id
-            exercitationem quibusdam tempore maxime inventore ab nam minus
-            officia rem accusamus distinctio consequatur.
+            {description}
           </p>
+          
           <div className="lg:w-3/12 md:w-6/12 w-full">
             <p className="text-gray-600 font-semibold mb-1">Size</p>
             <div className="flex flex-row gap-3">

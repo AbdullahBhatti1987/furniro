@@ -39,69 +39,29 @@ export default function Gallery() {
       src: "https://s3-alpha-sig.figma.com/img/6b7d/b8c4/94f946a8fffd305fbd1dafe75395cc6f?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=b9~qiDnc6KlVL~un~L9lzPk~Fzv1s14Epg7b4YeZlFAAdpvKlmIyVx3LQ39h8vkvnYbzRvWmL3eRJRHSYNVZ1t~ctAZn~vTEJ5jJeoj48t3FT7x8K8p5ow2x6SdVRTBs4xHaYQ-jSmlsZbtJW6bC5Pq-X6Bip8BYUgKHmh7Pef8g0lmSgx8t9YEo3hQU3TJWID1ayup3DM-jAicBWo532Ky9BKOg7FJfJDWXWxAe3dkHSIE9w-zDFTUXjH-88NrVt7nrioXrI31YBAmEccE3-5bcdpRWXa06mlPDenYxYVwqpQa7W460RtgD1n0sXYMTeuYIY0f4-8~342LsPDIgxw__",
     },
   ];
-  const imagesFromFurniro = [
-    {
-      id: 1,
-      src: "https://www.furniro.tech/assets/gallery-image-one-99cfab9a.png",
-    },
-    {
-      id: 2,
-      src: "https://www.furniro.tech/assets/gallery-image-two-ea13936e.png",
-    },
-    {
-      id: 3,
-      src: "https://www.furniro.tech/assets/gallery-image-five-e924e228.png",
-    },
-    {
-      id: 4,
-      src: "https://www.furniro.tech/assets/gallery-image-four-91c6513d.png",
-    },
-    {
-      id: 5,
-      src: "https://www.furniro.tech/assets/gallery-image-eight-2f0cb206.png",
-    },
-    {
-      id: 6,
-      src: "https://www.furniro.tech/assets/gallery-image-six-496cf4b8.png",
-    },
-    {
-      id: 7,
-      src: "https://www.furniro.tech/assets/gallery-image-three-cf518c9f.png",
-    },
-    {
-      id: 8,
-      src: "https://www.furniro.tech/assets/gallery-image-nine-335404f9.png",
-    },
-    {
-      id: 9,
-      src: "https://www.furniro.tech/assets/gallery-image-seven-5beb5dad.png",
-    },
-  ];
+ 
 
   return (
     <>
-      <div className="w-full bg-white overflow-hidden">
+      <div className="w-full bg-white overflow-hidden ">
         <div className="flex flex-col justify-center items-center gap-2 pt-16 w-[50vw] h-fit mx-auto">
-          <h2 className="text-3xl font-semibold">Share your setup with</h2>
-          <h1 className="text-6xl font-semibold">#FurniroFurniture</h1>
+          <h2 className="text-lg md:text-xl lg:text-3xl font-semibold">Share your setup with</h2>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-semibold">#FurniroFurniture</h1>
         </div>
-        <div className="w-12/12 h-[100vh] mx-auto flex flex-col justify-center items-center flex-wrap gap-4 overflow-hidden">
-          {imagesFromFurniro.map(
-            (data) =>
-              data.id <= 9 && (
-                <div>
-                  <img
-                    key={data.id}
-                    className="h-auto max-w-72 rounded-lg"
-                    src={data.src}
-                    alt={data.id}
-                  />
-                </div>
-              )
-          )}
+        <div className="w-[100vw] h-[100vh] mx-auto flex flex-col justify-center items-center flex-wrap gap-4 overflow-hidden" id="centerDiv">
+  {images.map(
+    (data) =>
+      data.id <= 9 && (
+        <div key={data.id}>
+          <img
+            className="h-auto max-w-36 md:max-w-48 lg:max-w-56 xl:max-w-72 rounded-lg"
+            src={data.src}
+          />
+        </div>
+      )
+  )}
+</div>
 
-        
-        </div>
       </div>
     </>
   );

@@ -17,7 +17,6 @@ function Auth() {
   return (
     <>
 
-      {/* <Component/> */}
       <Outlet/>
       <Footer/>
     </>

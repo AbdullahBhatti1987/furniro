@@ -3,13 +3,37 @@
 import { Navbar } from "flowbite-react";
 import { FaRegHeart } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
-
+import { IoFingerPrintSharp } from "react-icons/io5";
 import { TbUserExclamation } from "react-icons/tb";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CartSidebar } from "./CartSidebar";
-
+import { UserContext } from "../context/UserContext";
+import { useContext, useState } from "react";
+import { DropdownOption } from "./dropdownOption";
+import { auth } from "../utils/firebase";
+import { signOut } from "firebase/auth";
 
 export function Component() {
+  const [totalCart, setTotalCart] = useState(0)
+  const { user } = useContext(UserContext);
+  
+
+  // console.log("UserContext ==> ", user)
+  const navigate = useNavigate();
+
+  const HandleSignOut = async () => {
+    await signOut(auth)
+    .then(() => {
+      console.log("Sign-out successful.");
+      navigate("/");
+    })
+    .catch((error) => {
+      console.log("An error happened.", error);
+      alert("An error happened.", error);
+    });
+};
+
+
 
   return (
     <div className="w-full">
@@ -26,16 +50,24 @@ export function Component() {
             </span>
           </Navbar.Brand>
           <div className="flex md:order-2">
-            <div className="flex lg:gap-8 gap-4 justify-evenly items-center min-w-[25%] me-4">
-              <Link to={"/auth/login"}>
-                <TbUserExclamation className="text-xl lg:text-3xl font-bold" />
-              </Link>
-              <IoIosSearch className="text-xl lg:text-3xl font-bold" />
-              <FaRegHeart className="text-xl lg:text-2xl font-bold" />
-              
-              <CartSidebar/>
+            <div className="flex lg:gap-8 md:gap-4 gap-2 justify-evenly items-center min-w-[25%] me-4">
+              {user.isLogin ? (
+                <DropdownOption
+                  label={<IoFingerPrintSharp className="text-2xl" />}
+                  email={user.email} onClick={HandleSignOut} username={user.userName}
+                />
+              ) : (
+                <Link to={"/auth/login"}>
+                  <TbUserExclamation className="text-lg lg:text-3xl" />
+                </Link>
+              )}
+
+              <IoIosSearch className="text-xl lg:text-3xl" />
+              <FaRegHeart className="text-xl lg:text-2xl" />
+
+              <CartSidebar totalCart={totalCart}/>
             </div>
-           
+
             <Navbar.Toggle />
           </div>
           <Navbar.Collapse className="transition-all duration-300 ease-in-out ">
