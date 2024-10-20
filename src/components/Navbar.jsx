@@ -13,7 +13,7 @@ export function Component() {
 
   return (
     <div className="w-full">
-      <div className="lg:w-10/12 md:w-11/12 w-full mx-auto">
+      <div className="lg:w-11/12 w-full mx-auto">
         <Navbar fluid rounded>
           <Navbar.Brand>
             <img
@@ -42,7 +42,8 @@ export function Component() {
             <Navbar.Link>
               <Link
                 to="/"
-                className="lg:text-xl md:text-lg text-base font-semibold dark:text-white hover:text-gray-500"
+                className="lg:text-lg md:text-md text-sm font-semibold dark:text-white hover:text-gray-500 focus:text-black
+                "
               >
                 Home
               </Link>
@@ -50,7 +51,7 @@ export function Component() {
             <Navbar.Link>
               <Link
                 to="/shop"
-                className="lg:text-xl md:text-lg text-base font-semibold dark:text-white hover:text-gray-500"
+                className="lg:text-lg md:text-md text-sm font-semibold dark:text-white hover:text-gray-500 focus:text-black"
               >
                 Shop
               </Link>
@@ -58,7 +59,7 @@ export function Component() {
             <Navbar.Link>
               <Link
                 to="/blog"
-                className="lg:text-xl md:text-lg text-base font-semibold dark:text-white hover:text-gray-500"
+                className="lg:text-lg md:text-md text-sm font-semibold dark:text-white hover:text-gray-500 focus:text-black"
               >
                 Blog
               </Link>
@@ -66,7 +67,7 @@ export function Component() {
             <Navbar.Link>
               <Link
                 to="/about"
-                className="lg:text-xl md:text-lg text-base font-semibold dark:text-white hover:text-gray-500"
+                className="lg:text-lg md:text-md text-sm font-semibold dark:text-white hover:text-gray-500 focus:text-black"
               >
                 About
               </Link>
@@ -74,7 +75,7 @@ export function Component() {
             <Navbar.Link>
               <Link
                 to="/contact"
-                className="lg:text-xl md:text-lg text-base font-semibold dark:text-white hover:text-gray-500"
+                className="lg:text-lg md:text-md text-sm font-semibold dark:text-white hover:text-gray-500 focus:text-black"
               >
                 Contact
               </Link>

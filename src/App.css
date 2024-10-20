@@ -21,7 +21,12 @@
 
 
 }
-
+.text-dark{
+  color: #B88E2F!important;
+}
+.bg-dark{
+  background-color: #B88E2F!important;
+}
 
 .lightColor{
   background-color: var(--lightColor);
@@ -33,7 +38,7 @@
   background-color: var(--hoverColor);
 }
 .darkColor{
-  background-color: var(--darkColor);
+  background-color: var(--darkColor)!important;
 }
 .lightFont{
   color: var(--lightColor);
@@ -78,4 +83,9 @@
   50%  {transform: translate(100%,100%)}
   75%  {transform: translate(   0,100%)}
   100% {transform: translate(   0,0)}
+}
+
+input:focus {
+  outline: none!important; /* Removes the blue outline */
+  border-color: transparent!important; /* Makes the border transparent */
 }

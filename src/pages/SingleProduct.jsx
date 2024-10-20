@@ -4,11 +4,19 @@ import ProductDetail from "../components/ProductDetail";
 import Descriptions from "../components/Descriptions";
 import Heading from "../components/Heading";
 import OurProducts from "../components/OurProducts";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 
+function SingleProduct() {
+  const location = useLocation();
 
-function SingleProduct(params) {
+  useEffect(() => {
+    window.scrollTo(0, 0);  
+  }, [location]); 
+
+
 
 
   return (

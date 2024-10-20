@@ -5,9 +5,18 @@ import { PassComponent } from '../components/PasswordInput';
 import { Link } from 'react-router-dom';
 import { FaRegUser } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
-
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function Signup() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);  
+  }, [location]); 
+
+
+
   return (
      <div>
       <PageTop heading={"Signup"} linkName={"signup"} />

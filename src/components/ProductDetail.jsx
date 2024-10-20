@@ -98,10 +98,10 @@ function ProductDetail() {
                 +
               </button>
             </div>
-            <button className="flex items-center justify-center px-4 lg:px-8 py-2 text-lg font-semibold border border-black rounded-xl shadow-lg hover:bg-gray-100 active:shadow-sm">
+            <button className="flex items-center justify-center text-nowrap px-4 lg:px-8 py-2 text-lg font-semibold border border-black rounded-xl shadow-lg hover:bg-gray-100 active:shadow-sm">
               Add to Cart
             </button>
-            <button className="flex items-center justify-center px-4 lg:px-8 py-2 text-lg font-semibold border border-black rounded-xl shadow-lg hover:bg-gray-100 active:shadow-sm">
+            <button className="flex items-center justify-center text-nowrap px-4 lg:px-8 py-2 text-lg font-semibold border border-black rounded-xl shadow-lg hover:bg-gray-100 active:shadow-sm">
               + Compare
             </button>
           </div>

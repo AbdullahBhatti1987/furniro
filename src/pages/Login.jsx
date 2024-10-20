@@ -4,8 +4,18 @@ import { Component } from '../components/Input';
 import { PassComponent } from '../components/PasswordInput';
 import { Link } from 'react-router-dom';
 import { HiMail } from "react-icons/hi";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function Login() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);  
+  }, [location]); 
+
+
+  
   return (
      <div className=''>
       <PageTop heading={"Login"} linkName={"login"}/>

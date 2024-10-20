@@ -6,8 +6,8 @@ import { BiSupport } from "react-icons/bi";
 
 function Banner() {
   return (
-    <div className="lightColor py-24">
-      <div className="lg:w-10/12 mx-auto flex lg:flex-row md:flex-row flex-col justify-between items-center gap-12">
+    <div className="lightColor lg:py-24 md:py-16 py-12 ">
+      <div className="lg:w-10/12 md:w-11/12 mx-auto flex lg:flex-row md:flex-row flex-col justify-between items-center gap-12">
         <div className="lg:w-1/2 w-5/6 flex flex-row justify-between items-center gap-4">
           <div className=" flex flex-row justify-between items-center gap-3">
             <HiOutlineTrophy className="text-5xl" />

@@ -5,8 +5,18 @@ import Paragraph from "../components/Paragraph";
 import { MdLocationPin } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import { GoClockFill } from "react-icons/go";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function Contact() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);  
+  }, [location]); 
+
+
+
   return (
     <div>
       <PageTop heading={"Contact"} linkName={"Contact"} />
@@ -59,7 +69,7 @@ function Contact() {
                 <input
                   type="text"
                   placeholder="First Name"
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                  className="mt-1 block w-full p-2 py-4 border border-gray-300 rounded-md"
                 />
               </div>
               <div>
@@ -69,7 +79,7 @@ function Contact() {
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                  className="mt-1 block w-full p-2 py-4 border border-gray-300 rounded-md"
                 />
               </div>
 
@@ -78,7 +88,7 @@ function Contact() {
                 <input
                   type="text"
                   placeholder="Street Address"
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                  className="mt-1 block w-full p-2 py-4 border border-gray-300 rounded-md"
                 />
               </div>
 
@@ -88,10 +98,10 @@ function Contact() {
                 </label>
                 <textarea
                   placeholder="Additional Information"
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                  className="mt-1 block w-full p-2 py-4 border border-gray-300 rounded-md"
                 ></textarea>
               </div>
-              <button className="darkBoard w-1/2 border-2 py-2 rounded-lg darkColor text-white font-bold">Submit</button>
+              <button className="darkBoard w-1/2 border-2 py-4 rounded-lg darkColor text-white font-bold">Submit</button>
             </form>
           </div>
         </div>

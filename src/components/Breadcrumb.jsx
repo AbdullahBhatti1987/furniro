@@ -15,6 +15,7 @@ export function Component({ to, linkName }) {
           Home
         </Link>
       </Breadcrumb.Item>
+      
       <Breadcrumb.Item>
         <Link to={to} className="text-black">
           {linkName}
