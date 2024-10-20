@@ -6,7 +6,7 @@ import { IoIosSearch } from "react-icons/io";
 
 import { TbUserExclamation } from "react-icons/tb";
 import { Link } from "react-router-dom";
-import { CartOption } from "./CartOption";
+import { CartSidebar } from "./CartSidebar";
 
 
 export function Component() {
@@ -33,7 +33,7 @@ export function Component() {
               <IoIosSearch className="text-xl lg:text-3xl font-bold" />
               <FaRegHeart className="text-xl lg:text-2xl font-bold" />
               
-              <CartOption/>
+              <CartSidebar/>
             </div>
            
             <Navbar.Toggle />

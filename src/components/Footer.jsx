@@ -72,7 +72,7 @@ function Footer() {
   <h3 className="min-h-16 text-gray-800 lg:justify-start lg:items-start flex items-center md:flex-row md:justify-start md:font-semibold md:items-center w-full md:w-1/3">
     Newsletter
   </h3>
-  <div className="flex lg:w-full md:w-2/3 gap-4 flex-col">
+  <div className="flex lg:w-full md:w-2/3 gap-4 lg:flex-row md:flex-row flex-col">
     <input
       type="email"
       name="email"

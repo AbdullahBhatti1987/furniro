@@ -10,6 +10,8 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Auth from './pages/Auth'
 import SingleProduct from './pages/SingleProduct'
+import Cart from './pages/Cart'
+import CheckOut from './pages/CheckOut'
 
 function App() {
 
@@ -28,6 +30,8 @@ function App() {
         <Route path={'/blog'} element={<Blog/>} />
         <Route path={'/about'} element={<About/>} />
         <Route path={'/contact'} element={<Contact/>} />
+        <Route path={'/cart'} element={<Cart/>} />
+        <Route path={'/checkout'} element={<CheckOut/>} />
         <Route/>
       </Route>
     </Routes>
