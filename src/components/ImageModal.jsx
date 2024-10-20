@@ -12,7 +12,7 @@ export function ImageModal({src}) {
     <>
       <button onClick={() => setOpenModal(true)}>
       <img
-          className="w-1/3 border-2 border-gray-300 rounded-lg shadow-md cursor-pointer"
+          className="w-2/3 border-2 border-gray-300 rounded-lg shadow-md cursor-pointer"
           src={src}
           alt=""
         />

@@ -1,10 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
-
 import Banner from "../components/Banner";
 import PageTop from "../components/PageTop";
-import MyCart from "../components/MyCart";
 import BillingDetail from "../components/BillingDetail";
 
 function CheckOut() {

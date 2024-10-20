@@ -9,10 +9,10 @@ const BillingDetail = () => {
   };
 
   return (
-    <div className="py-6">
-      <div className="w-10/12 mx-auto gap-6 md:gap-12 lg:gap-24 flex flex-row">
+    <div className="py-6 ">
+      <div className="w-11/12 lg:w-10/12 mx-auto gap-6 md:gap-12 lg:gap-24 flex lg:flex-row flex-col ">
         {/* Billing Details */}
-        <div className="w-11/12 lg:w-6/12 md:w-6/12 bg-white p-6 rounded-lg shadow-md">
+        <div className="w-full lg:w-6/12 md:w-6/12 bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-4xl font-bold mb-6">Billing details</h2>
           <form className="space-y-4">
             <div className="flex space-x-4">
@@ -120,7 +120,7 @@ const BillingDetail = () => {
         </div>
 
         {/* Order Summary */}
-        <div className="w-11/12 lg:w-6/12 md:w-6/12 bg-white p-6 rounded-lg shadow-md">
+        <div className="w-full lg:w-6/12 md:w-6/12 bg-white p-6 rounded-lg shadow-md">
           <div className="flex justify-between mb-4">
             <h2 className="text-xl font-bold mb-6">Product</h2>
             <h2 className="text-xl font-bold mb-6">Subtotal</h2>

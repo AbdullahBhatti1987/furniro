@@ -29,25 +29,25 @@ export default function MyCart() {
 
 
         </div>
-        <div className="relative right w-4/12 lightColor py-6 px-12 flex flex-col justify-start">
+        <div className="relative right w-4/12 lightColor py-2 md:py-4 lg:py-6 px-4 md:px-8 lg:px-12 flex flex-col justify-start">
   <div>
     <h1 className="text-center font-black text-2xl md:text-3xl lg:text-4xl py-2">Cart Total</h1>
   </div>
   <div className="flex flex-row justify-between items-center py-2">
-    <h3 className="w-2/5 text-lg md:text-xl lg:text-2xl">Subtotal</h3>
-    <h3 className="w-3/5 text-lg md:text-xl lg:text-2xl text-gray-500 font-bold">Rs. <span>50,000</span></h3>
+    <h3 className="w-2/5 text-sm md:text-md lg:text-lg">Subtotal</h3>
+    <h3 className="w-3/5 text-sm md:text-md lg:text-lg text-gray-500 font-bold">Rs. <span>50,000</span></h3>
   </div>
   <div className="flex flex-row justify-between items-center py-2">
-    <h3 className="w-2/5 text-lg md:text-xl lg:text-2xl">DC</h3>
-    <h3 className="w-3/5 text-lg md:text-xl lg:text-2xl text-gray-500 font-bold">Rs. <span>500</span></h3>
+    <h3 className="w-2/5 text-sm md:text-md lg:text-lg">Delivery</h3>
+    <h3 className="w-3/5 text-sm md:text-md lg:text-lg text-gray-500 font-bold">Rs. <span>500</span></h3>
   </div>
   <div className="flex flex-row justify-between items-center py-2">
-    <h3 className="w-2/5 text-lg md:text-xl lg:text-2xl">Discount</h3>
-    <h3 className="w-3/5 text-lg md:text-xl lg:text-2xl text-gray-500 font-bold">Rs. -<span>7,500</span></h3>
+    <h3 className="w-2/5 text-sm md:text-md lg:text-lg">Discount</h3>
+    <h3 className="w-3/5 text-sm md:text-md lg:text-lg text-gray-500 font-bold">Rs. -<span>7,500</span></h3>
   </div>
   <div className="flex flex-row justify-between items-center py-2">
-    <h3 className="w-2/5 text-lg md:text-xl lg:text-2xl">Total</h3>
-    <h3 className="w-3/5 text-lg md:text-xl lg:text-2xl darkFont font-bold">Rs. <span>42,500</span></h3>
+    <h3 className="w-2/5 text-sm md:text-md lg:text-lg">Total</h3>
+    <h3 className="w-3/5 text-sm md:text-md lg:text-lg darkFont font-bold">Rs. <span>42,500</span></h3>
   </div>
   <div className="w-full mx-auto text-center">
     <button className="w-full border-2 darkBorder font-bold darkFont shadow-lg py-2">
