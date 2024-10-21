@@ -16,7 +16,6 @@ import { doc, setDoc } from "firebase/firestore";
 function Signup() {
   const location = useLocation();
 
-  console.log(contextUser)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
