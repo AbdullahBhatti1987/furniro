@@ -1,7 +1,22 @@
 import React, { useState } from "react";
 
-function ProductDetail({title,category, newPrice, rating, description, mainImage, thumbnail1,thumbnail2, thumbnail3, thumbnail4 }) {
-  const [count, setCount] = useState(0);
+function ProductDetail({
+  title,
+  category,
+  newPrice,
+  rating,
+  description,
+  mainImage,
+  thumbnail1,
+  thumbnail2,
+  thumbnail3,
+  thumbnail4,
+  onClick,
+  lessQuantityCart,
+  addQuantityIntoCart,
+  count
+}) {
+
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -30,9 +45,9 @@ function ProductDetail({title,category, newPrice, rating, description, mainImage
             alt="..."
           />
         </div>
-        <div className="right lg:w-10/12 w-full">
+        <div className="right lg:w-10/12 w-full shadow-lg rounded-2xl flex justify-center items-center overflow-hidden ">
           <img
-            className="rounded-2xl hover:shadow-lg transition-shadow duration-300"
+            className="rounded-2xl transition duration-300 hover:scale-150"
             src={mainImage}
             alt="..."
           />
@@ -43,7 +58,7 @@ function ProductDetail({title,category, newPrice, rating, description, mainImage
       <div className="right lg:w-6/12 md:w-6/12 w-full border-b-2 p-6">
         <div className="flex flex-col gap-3">
           <h1 className="lg:text-3xl text-2xl font-bold text-gray-800">
-           {title}
+            {title}
           </h1>
           <h3 className="lg:text-2xl text-xl text-gray-400 font-semibold">
             {category}
@@ -55,12 +70,14 @@ function ProductDetail({title,category, newPrice, rating, description, mainImage
             <h3 className="lg:text-lg text-md text-gray-600 font-medium">
               Rating:
             </h3>
-            <span className="ml-2 text-yellow-500 text-lg font-bold">{rating}</span>
+            <span className="ml-2 text-yellow-500 text-lg font-bold">
+              {rating}
+            </span>
           </div>
           <p className="text-sm lg:text-base leading-relaxed text-gray-700">
             {description}
           </p>
-          
+
           <div className="lg:w-3/12 md:w-6/12 w-full">
             <p className="text-gray-600 font-semibold mb-1">Size</p>
             <div className="flex flex-row gap-3">
@@ -86,7 +103,7 @@ function ProductDetail({title,category, newPrice, rating, description, mainImage
           <div className="flex flex-row gap-4 mt-4">
             <div className="flex flex-row items-center border-2 border-gray-300 rounded-xl shadow-sm">
               <button
-                onClick={() => setCount(count - 1)}
+                onClick={lessQuantityCart}
                 className="py-2 px-4 text-lg font-bold border-r bg-gray-50 rounded-tl-lg rounded-bl-lg active:bg-gray-100"
                 disabled={count === 0}
               >
@@ -94,13 +111,17 @@ function ProductDetail({title,category, newPrice, rating, description, mainImage
               </button>
               <p className="py-2 px-4 text-lg">{count}</p>
               <button
-                onClick={() => setCount(count + 1)}
+                onClick={ addQuantityIntoCart }
                 className="py-2 px-4 text-lg font-bold border-l bg-gray-50 rounded-tr-lg rounded-br-lg active:bg-gray-100"
               >
                 +
               </button>
             </div>
-            <button className="flex items-center justify-center text-nowrap px-4 lg:px-8 py-2 text-lg font-semibold border border-black rounded-xl shadow-lg hover:bg-gray-100 active:shadow-sm">
+
+            <button
+              onClick={onClick}
+              className="flex items-center justify-center text-nowrap px-4 lg:px-8 py-2 text-lg font-semibold border border-black rounded-xl shadow-lg hover:bg-gray-100 active:shadow-sm"
+            >
               Add to Cart
             </button>
             <button className="flex items-center justify-center text-nowrap px-4 lg:px-8 py-2 text-lg font-semibold border border-black rounded-xl shadow-lg hover:bg-gray-100 active:shadow-sm">

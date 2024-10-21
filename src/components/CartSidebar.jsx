@@ -1,18 +1,25 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BsCart } from "react-icons/bs";
 import { Drawer } from "flowbite-react";
 import DrawerItem from "./DrawerItem";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AddtoCartContext } from "../context/AddToCart";
 import { UserContext } from "../context/UserContext";
 
 export function CartSidebar({ totalCart }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClose = () => setIsOpen(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  const handleClose = () => setIsOpen(false);
+  
   const { user } = useContext(UserContext);
 
   const {
@@ -39,34 +46,42 @@ export function CartSidebar({ totalCart }) {
         </button>
       </div>
       <Drawer
-        className="flex flex-col gap-1 h-fit max-h-[100vh]  shadow-lg overflow-y-scroll"
+        className="flex flex-col gap-1 h-fit max-h-[100vh] p-2 shadow-lg overflow-y-auto scrollbar-y-hide"
         open={isOpen}
         onClose={handleClose}
+        onMouseLeave={() => 
+          setTimeout(() => {
+            setIsOpen(false); // Close after 5 seconds
+          }, 1000)
+        }
         position="right"
+
       >
         <Drawer.Header title="Shopping Cart" />
-        <div className="overflow-y-scroll min-h-[60vh]">
+        <div className="overflow-y-scroll scrollbar-hide min-h-[60vh]">
           {addtoCart.map((data) => (
             <DrawerItem
               key={data.id}
               title={data.title}
-              count={1}
+              count={data.quantity}
               amount={data.price}
               image={data.thumbnail}
+              deleteCart={() => removeItemFromCart(data.id)}
+              onClick={() => navigate(`/shop/${data.id}`)}
             />
+
           ))}
         </div>
 
         <div className="flex flex-row py-2 border-b-2">
           <div className="w-2/6">Subtotal</div>
-          <div className="w-4/6 darkFont font-bold"> 
-          
-          $   
-  <span> 
-    {addtoCart.reduce((total, item) => total + item.price, 0).toFixed(2)}
-  </span>
-          
-          
+          <div className="w-4/6 darkFont font-bold">
+            $
+            <span>
+              {addtoCart
+                .reduce((total, item) => total + item.price * item.quantity, 0)
+                .toFixed(2)}
+            </span>
           </div>
         </div>
 

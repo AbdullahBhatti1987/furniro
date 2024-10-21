@@ -16,6 +16,7 @@ function Card({
   addToCart,
   buyNow,
   toViewProduct,
+  addtocartBtnText,
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [discount, setDiscount] = useState(false);
@@ -73,7 +74,7 @@ function Card({
           onClick={addToCart}
           className="addToCartBtn darkFont text-nowrap bg-white opacity-100 min-w-24 lg:min-w-36 py-2 font-bold lg:text-md md:text-sm text-xs"
         >
-          Add to cart
+          {addtocartBtnText}
         </button>
         <button
           onClick={buyNow}

@@ -32,6 +32,7 @@ function OurProducts({apiProducts, limit}) {
   }, []); 
 
 
+
   return (
     <div className="bg-white py-12 ">
       <div className="w-10/12 mx-auto ">
@@ -45,9 +46,12 @@ function OurProducts({apiProducts, limit}) {
               oldPrice={(data.price * 1.25).toFixed(2)}  
               category={data.category}
               src={data.thumbnail}
-              addToCart={()=>{setAddtoCart([...addtoCart, data])}}
+              addToCart={()=>{
+                addItemToCart(data)                
+              }}             
               buyNow={()=>{console.log("BuyNow this product", data.id)}}
-              toViewProduct={`/shop/${data.id}`}
+              toViewProduct={`/shop/${data.id}`}              
+              addtocartBtnText={"Add to Cart"}
     
             />
             ))

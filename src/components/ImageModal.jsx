@@ -18,7 +18,7 @@ export function ImageModal({ src }) {
       <Modal
         dismissible
         show={openModal}
-        size="2xl"
+        size="lg"
         onClose={() => setOpenModal(false)}
       >
         <Modal.Body>

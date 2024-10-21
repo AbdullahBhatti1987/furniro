@@ -42,9 +42,10 @@ export default function MyCart() {
                 src={data.thumbnail}
                 title={data.title}
                 price={data.price}
-                onClick={() => removeItemFromCart()}
-                removeItem={()=> removeItemFromCart()}
-                addItem={()=> addItemToCart()}
+                deleteItemFromCart={() => removeItemFromCart(data.id)}
+                lessQuantityCart={()=> lessQuanityFromCart(data.id)}
+                addQuantityIntoCart={()=> addItemToCart(data.id)}
+                totalPrice={data.price * data.quantity}
               />
             ))}
           </div>

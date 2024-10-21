@@ -16,6 +16,8 @@ function About() {
   return (
      <div>
       <PageTop heading={"About"} linkName={"About"} to={"/about"}/>
+      <div className='w-full min-h-48'>
+       </div>
      </div>
   )
 }

@@ -8,9 +8,10 @@ export default function CartProduct({
   src,
   title,
   price,
-  onClick,
-  removeItem,
-  addItem,
+  deleteItemFromCart,
+  lessQuantityCart,
+  addQuantityIntoCart,
+  totalPrice
 }) {
   const [count, setCount] = useState(1);
   const location = useLocation();
@@ -32,7 +33,7 @@ export default function CartProduct({
             onClick={() => {
               setCount(count - 1);
               {
-                removeItem;
+              lessQuantityCart;
               }
             }}
             className="py-1 px-2 text-xs font-bold border-r bg-gray-50 rounded-tl-full rounded-bl-full active:bg-gray-100"
@@ -42,7 +43,7 @@ export default function CartProduct({
           </button>
           <p className="py-1 px-2 text-xs">{count}</p>
           <button
-            onClick={() => (setCount(count + 1), { addItem })}
+            onClick={() => (setCount(count + 1), { addQuantityIntoCart })}
             className="py-1 px-2 text-xs font-bold border-l bg-gray-50 rounded-tr-full rounded-br-full active:bg-gray-100"
           >
             +
@@ -50,10 +51,10 @@ export default function CartProduct({
         </div>
       </div>
       <h4 className="w-3/12 font-bold ">
-        $ <span>{(price * count).toFixed(2)}</span>
+        $ <span>{totalPrice}</span>
       </h4>
       <button className="w-1/12 right-8 cursor-pointer">
-        <AiFillDelete className="darkFont text-2xl" onClick={onClick} />
+        <AiFillDelete className="darkFont text-2xl" onClick={deleteItemFromCart} />
       </button>
     </div>
   );

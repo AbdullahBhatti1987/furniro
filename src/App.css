@@ -89,3 +89,14 @@ input:focus {
   outline: none!important; /* Removes the blue outline */
   border-color: transparent!important; /* Makes the border transparent */
 }
+
+
+/* App.css ya global CSS file me */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { Component } from "../components/Breadcrumb";
 import ProductDetail from "../components/ProductDetail";
@@ -6,9 +6,10 @@ import Descriptions from "../components/Descriptions";
 import Heading from "../components/Heading";
 import OurProducts from "../components/OurProducts";
 import axios from "axios";
+import { AddtoCartContext } from "../context/AddToCart";
 
 function SingleProduct() {
-  const [SingleProduct, setSingleProduct] = useState([]);
+  const [oneProduct, setOneProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const location = useLocation();
@@ -23,7 +24,7 @@ function SingleProduct() {
     axios
       .get(`https://dummyjson.com/products/${id}`)
       .then((response) => {
-        setSingleProduct(response.data);
+        setOneProduct(response.data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -31,6 +32,18 @@ function SingleProduct() {
         setIsLoading(false);
       });
   }, []);
+
+
+  
+
+  const {
+    addtoCart,
+    setAddtoCart,
+    addItemToCart,
+    lessQuanityFromCart,
+    removeItemFromCart,
+    isItemAdded,
+  } = useContext(AddtoCartContext);
 
   return (
     <div className="">
@@ -40,16 +53,21 @@ function SingleProduct() {
         </div>
       </div>
       <ProductDetail
-      mainImage={SingleProduct.thumbnail}
-        thumbnail1={SingleProduct.thumbnail}
-        thumbnail2={SingleProduct.thumbnail}
-        thumbnail3={SingleProduct.thumbnail}
-        thumbnail4={SingleProduct.thumbnail}            
-        category={SingleProduct.category}
-        title={SingleProduct.title}
-        newPrice={SingleProduct.price}
-        rating={SingleProduct.rating}
-        description={SingleProduct.description}
+        mainImage={oneProduct.thumbnail}
+        thumbnail1={oneProduct.thumbnail}
+        thumbnail2={oneProduct.thumbnail}
+        thumbnail3={oneProduct.thumbnail}
+        thumbnail4={oneProduct.thumbnail}            
+        category={oneProduct.category}
+        title={oneProduct.title}
+        newPrice={oneProduct.price}
+        rating={oneProduct.rating}
+        description={oneProduct.description}
+        onClick={()=>{addItemToCart(oneProduct)}}
+        lessQuantityCart={()=>{lessQuanityFromCart(oneProduct)}}
+        addQuantityIntoCart={()=>{addItemToCart(oneProduct)}}
+        count={1}
+       
       />
       <Descriptions />
       <Heading text={"Related Products"} />

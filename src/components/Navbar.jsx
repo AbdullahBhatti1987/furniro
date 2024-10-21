@@ -5,10 +5,10 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 import { IoFingerPrintSharp } from "react-icons/io5";
 import { TbUserExclamation } from "react-icons/tb";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { CartSidebar } from "./CartSidebar";
 import { UserContext } from "../context/UserContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { DropdownOption } from "./dropdownOption";
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
@@ -19,8 +19,6 @@ export function Component() {
   const { addtoCart } = useContext(AddtoCartContext);
 
   const navigate = useNavigate();
-
-  // const { id } = useParams();
 
   const HandleSignOut = async () => {
     await signOut(auth)
