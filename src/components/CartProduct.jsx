@@ -4,8 +4,15 @@ import { useLocation } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai";
 import { ImageModal } from "./ImageModal";
 
-export default function CartProduct() {
-  const [count, setCount] = useState(0);
+export default function CartProduct({
+  src,
+  title,
+  price,
+  onClick,
+  removeItem,
+  addItem,
+}) {
+  const [count, setCount] = useState(1);
   const location = useLocation();
 
   useEffect(() => {
@@ -14,40 +21,39 @@ export default function CartProduct() {
 
   return (
     <div className="relative flex flex-row items-center text-center border rounded-lg py-1">
-      <div className="flex flex-row justify-between items-center w-2/6 gap-1 py-1">
-        <ImageModal
-          src={
-            "https://s3-alpha-sig.figma.com/img/2ac4/13c1/917ac944454e358f73d0af67e1f1b74e?Expires=1730073600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A48V1PV1lZVvMFoFBeOVQueiIleT9L4nXivR7zHgx96OJZhvl5af353WPur8rpJAoMPzXUqcpOAcB9f-hOZxASk3qL9PXugNgsIJxJD8eEMvvNoE3ghPq3wxRRQxwvjNTmVrKE6CohfgM6t0Cr8opCxbM6QCPDyXBz1C-Y0wLdxSvywczpAG8376zNkORfD-l5k4YSqM1h9rjiVO9uTIz6uwxPpoXDDJLkskBACsQEtJslBVEKqpsVWTHNZ63t-3Fq0DluBS6Oc-~X8QyrmncM4jsuTPDI2klnq8PVKx6Eq3tsdv-zfGLHCuoTB5iFfvZDcx0fPrcM804f5GrjiQbg__"
-          }
-        />
-
-        <h3 className="w-2/3 text-nowrap">Asgaard sofa</h3>
+      <div className="w-2/12 flex flex-row justify-between items-center gap-1 py-1">
+        <ImageModal src={src} />
       </div>
-
-      <h4 className="w-1/6">25000</h4>
-      <div className="w-1/6 flex justify-center items-center">
+      <h3 className="w-3/12 truncate text-start">{title}</h3>
+      <h4 className="w-2/12 text-start">{price}</h4>
+      <div className="w-1/12 flex justify-center items-center">
         <div className="flex flex-row items-center border border-gray-300 rounded-full shadow-sm">
           <button
-            onClick={() => setCount(count - 1)}
-            className="py-2 px-4 text-sm font-bold border-r bg-gray-50 rounded-tl-full rounded-bl-full active:bg-gray-100"
-            disabled={count === 0}
+            onClick={() => {
+              setCount(count - 1);
+              {
+                removeItem;
+              }
+            }}
+            className="py-1 px-2 text-xs font-bold border-r bg-gray-50 rounded-tl-full rounded-bl-full active:bg-gray-100"
+            disabled={count === 1}
           >
             -
           </button>
-          <p className="py-2 px-4 text-sm">{count}</p>
+          <p className="py-1 px-2 text-xs">{count}</p>
           <button
-            onClick={() => setCount(count + 1)}
-            className="py-2 px-4 text-sm font-bold border-l bg-gray-50 rounded-tr-full rounded-br-full active:bg-gray-100"
+            onClick={() => (setCount(count + 1), { addItem })}
+            className="py-1 px-2 text-xs font-bold border-l bg-gray-50 rounded-tr-full rounded-br-full active:bg-gray-100"
           >
             +
           </button>
         </div>
       </div>
-      <h4 className="w-2/6 font-bold ">
-        Rs. <span>{50000}</span>
+      <h4 className="w-3/12 font-bold ">
+        $ <span>{(price * count).toFixed(2)}</span>
       </h4>
-      <button className="absolute right-8 cursor-pointer">
-        <AiFillDelete className="darkFont text-2xl" />
+      <button className="w-1/12 right-8 cursor-pointer">
+        <AiFillDelete className="darkFont text-2xl" onClick={onClick} />
       </button>
     </div>
   );

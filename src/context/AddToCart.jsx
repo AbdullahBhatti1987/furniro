@@ -5,11 +5,12 @@ export const AddtoCartContext = createContext();
 function AddToCartContextProvider({ children }) {
   const [addtoCart, setAddtoCart] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-
+  
   useEffect(() => {
     if (isLoaded) {
       localStorage.setItem("addtoCart", JSON.stringify(addtoCart));
     }
+    console.log("cart =>", addtoCart)
   }, [addtoCart]);
 
   useEffect(() => {
@@ -32,7 +33,6 @@ function AddToCartContextProvider({ children }) {
 
   function addItemToCart(item) {
     const arr = addtoCart;
-
     const itemIndex = addtoCart.findIndex((data) => data.id == item.id);
     if (itemIndex == -1) {
       arr.push({ ...item, quantity: 1 });

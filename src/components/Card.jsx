@@ -12,7 +12,7 @@ function Card({
   newPrice,
   oldPrice,
   discountPercentage,
-  onClick,
+  // onClick,
   addToCart,
   buyNow,
   toViewProduct,

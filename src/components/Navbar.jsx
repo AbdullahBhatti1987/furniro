@@ -5,35 +5,34 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 import { IoFingerPrintSharp } from "react-icons/io5";
 import { TbUserExclamation } from "react-icons/tb";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { CartSidebar } from "./CartSidebar";
 import { UserContext } from "../context/UserContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect } from "react";
 import { DropdownOption } from "./dropdownOption";
 import { auth } from "../utils/firebase";
 import { signOut } from "firebase/auth";
+import { AddtoCartContext } from "../context/AddToCart";
 
 export function Component() {
-  const [totalCart, setTotalCart] = useState(0)
   const { user } = useContext(UserContext);
-  
+  const { addtoCart } = useContext(AddtoCartContext);
 
-  // console.log("UserContext ==> ", user)
   const navigate = useNavigate();
+
+  // const { id } = useParams();
 
   const HandleSignOut = async () => {
     await signOut(auth)
-    .then(() => {
-      console.log("Sign-out successful.");
-      navigate("/");
-    })
-    .catch((error) => {
-      console.log("An error happened.", error);
-      alert("An error happened.", error);
-    });
-};
-
-
+      .then(() => {
+        console.log("Sign-out successful.");
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log("An error happened.", error);
+        alert("An error happened.", error);
+      });
+  };
 
   return (
     <div className="w-full">
@@ -54,7 +53,9 @@ export function Component() {
               {user.isLogin ? (
                 <DropdownOption
                   label={<IoFingerPrintSharp className="text-2xl" />}
-                  email={user.email} onClick={HandleSignOut} username={user.userName}
+                  email={user.email}
+                  onClick={HandleSignOut}
+                  username={user.userName}
                 />
               ) : (
                 <Link to={"/auth/login"}>
@@ -65,7 +66,7 @@ export function Component() {
               <IoIosSearch className="text-xl lg:text-3xl" />
               <FaRegHeart className="text-xl lg:text-2xl" />
 
-              <CartSidebar totalCart={totalCart}/>
+              <CartSidebar totalCart={addtoCart.length} />
             </div>
 
             <Navbar.Toggle />

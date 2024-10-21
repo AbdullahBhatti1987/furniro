@@ -1,13 +1,21 @@
 import Card from "./Card";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import React, { useContext, useEffect, useState } from "react";
+// import { useParams } from "react-router";
+import { AddtoCartContext } from "../context/AddToCart";
 
 function OurProducts({apiProducts, limit}) {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  const {id} = useParams();
+  const {
+    addtoCart,
+    setAddtoCart,
+    addItemToCart,
+    lessQuanityFromCart,
+    removeItemFromCart,
+    isItemAdded,
+  } = useContext(AddtoCartContext);
+  
 
   useEffect(() => {
     setIsLoading(true); 
@@ -30,15 +38,14 @@ function OurProducts({apiProducts, limit}) {
         <div className="flex mx-auto gap-4 flex-wrap">
           {isLoading == false ? (
             products.map((data) => ( data.id <= limit &&
-              <Card 
-             
+              <Card              
               key={data.id}  
               title={data.title}
               newPrice={data.price}
               oldPrice={(data.price * 1.25).toFixed(2)}  
               category={data.category}
               src={data.thumbnail}
-              addToCart={()=>{}}
+              addToCart={()=>{setAddtoCart([...addtoCart, data])}}
               buyNow={()=>{console.log("BuyNow this product", data.id)}}
               toViewProduct={`/shop/${data.id}`}
     

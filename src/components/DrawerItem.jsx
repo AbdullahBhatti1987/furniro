@@ -6,7 +6,7 @@ export default function DrawerItem({ title, count, amount, image }) {
   return (
     <Drawer.Items className={"shadow-md rounded-xl py-2"}>
       <div className=" flex flex-row justify-between items-center">
-        <div className="w-6/6 flex flex-row justify-between items-center border rounded-xl p-1">
+        <div className=" flex flex-row justify-between gap-2 items-center border rounded-xl p-1">
           <div className="w-2/6 lightColor rounded-lg">
             <img
               src={image}
@@ -14,8 +14,8 @@ export default function DrawerItem({ title, count, amount, image }) {
               className="rounded-lg"
             />
           </div>
-          <div className="">
-            <h3 className="text-lg">{title}</h3>
+          <div className="w-4/6 flex flex-col justify-between items-start gap-2">
+            <h4 className="text-md text-wrap truncate">{title}</h4>
             <p className="flex flex-row gap-2">
               <span>{count}</span> X
               <span className="darkFont">
